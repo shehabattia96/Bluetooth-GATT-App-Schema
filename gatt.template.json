@@ -1,0 +1,77 @@
+{
+    "$gattSchemaVersion": 1,
+    "version": "appV1",
+    "description": "What is this GATT schema for?",
+    "services": [
+        {
+            "name": "Service Name",
+            "description": "Information about this service",
+            "uuid": "string or number",
+            "isAdvertised": true,
+            "isRequiresAuthentication": false,
+            "characteristics": [
+                {
+                    "name": "Characteristic Name",
+                    "uuid": "string or number",
+                    "description": "Information about this characteristic",
+                    "isRequiresAuthentication": false,
+                    "operations": "read|write|notify|indicate",
+                    "writeType": "response|no_response|signed",
+                    "payloadLengthInBytes": 54,
+                    "isLSB": true,
+                    "payload": [
+                        {
+                            "name": "Sensor A Reading",
+                            "datatype": "uint16",
+                            "lengthInBytes": 2,
+                            "defaultValue": 0,
+                            "minValue": 0,
+                            "maxValue": 1024,
+                            "exampleValue": 0,
+                            "notes": "An int value."
+                        },
+                        {
+                            "name": "Temperature Reading",
+                            "datatype": "uint16",
+                            "lengthInBytes": 2,
+                            "defaultValue": 0.0,
+                            "floatPrecision": 100,
+                            "exampleValue": 0.0,
+                            "notes": "A float value."
+                        },
+                        {
+                            "name": "User Input",
+                            "datatype": "char[]",
+                            "lengthInBytes": 50,
+                            "encoding": "utf8",
+                            "matchRegex": "This pattern is expected.",
+                            "defaultValue": "",
+                            "exampleValue": "",
+                            "notes": "A string value."
+                        }
+                    ]
+                }
+            ],
+            "descriptors": [
+                {
+                    "name": "Descriptor Name",
+                    "uuid": "string or number",
+                    "description": "Information about this descriptor",
+                    "isRequiresAuthentication": false,
+                    "operations": "read|write",
+                    "payloadLengthInBytes": 1,
+                    "isLSB": true,
+                    "payload": [
+                        {
+                            "name": "DISABLE_NOTIFICATION_VALUE",
+                            "datatype": "uint8",
+                            "lengthInBytes": 1,
+                            "defaultValue": 0,
+                            "notes": "Descriptor to disable notify."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

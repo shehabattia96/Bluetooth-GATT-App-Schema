@@ -19,7 +19,7 @@ This is the GATT Profile Information that we are interested in:
 - Characteristic Names and UUID's
 - Characteristic and Descriptor payload information.
     - Somtimes payloads will follow the GATT Format Types spec defined in the [GATT Spec Supplement](./GATT_Specification_Supplement_v9.pdf).
-    - However, sometimes the payload is encoded with multiple datatypes. We wish to identify these here as well. For example, `0b0001001` the first bit could flag one sensor's state and the fourth could flag an application state. These are custom implementations that only the app designers would be aware of.
+    - However, sometimes the payload is encoded with multiple datatypes. We wish to identify these here as well. For example, `0b0001001` the first/_LSB zero_ bit could flag one sensor's state and the fourth could flag an application state. These are custom implementations that only the app designers would be aware of.
 
 
 ## Central and Peripheral Responsibilities
@@ -48,3 +48,4 @@ The Central application will:
 - Nordic's [Bluetooth Numbers Database](https://github.com/NordicSemiconductor/bluetooth-numbers-database/tree/master/v1): contains json files with Service and Characteristic UUID's, among other things. Some of these are non-official numbers.
 - [GATT Spec Supplement](./GATT_Specification_Supplement_v9.pdf)
 - [Bluetooth Core Specification 5.4](https://www.bluetooth.com/specifications/specs/core-specification-5-4/)
+- [Bluetooth Basics article from Silicon Labs](https://community.silabs.com/s/article/x-deprecated-kba-bt-0102-ble-basics-master-slave-gatt-client-server-data-rx-x?language=en_US)
